@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function ShoppingCards({ updateCartCount }   ) {
   const [products, setProducts] = useState([]);
@@ -19,7 +21,7 @@ export default function ShoppingCards({ updateCartCount }   ) {
         console.error("Error fetching data:", error);
       }
     };
-
+    AOS.init();
     fetchData();
   }, []);
 
@@ -56,7 +58,7 @@ export default function ShoppingCards({ updateCartCount }   ) {
   return (
     <div className="w-full p-10">
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div data-aos="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {currentProducts.map((product) => (
           <div key={product.id} className="p-6 bg-white rounded-md shadow-md">
             <img
