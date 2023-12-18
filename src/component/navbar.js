@@ -51,11 +51,8 @@ const Navbar = ({ cartCount, setCartCount }) => {
 
       {showHiddenComponent && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 z-50 hamberg1">
-          <div className="text-white p-4 md:p-8">
-            <div
-              className="cursor-pointer absolute top-4  left-2 text-[1.6rem]"
-              onClick={handleCloseButtonClick}
-            >
+          <div className="text-white p-4 md:p-8 animate-fadeIn">
+            <div className="cursor-pointer absolute top-4 left-2 text-[1.6rem]" onClick={handleCloseButtonClick}>
               X
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 md:mt-12">
@@ -63,7 +60,7 @@ const Navbar = ({ cartCount, setCartCount }) => {
               <div className="menu-item">About Us</div>
               <div className="menu-item">Processes</div>
               <div className="menu-item">Blog</div>
-              <div className="w-full md:col-span-2 lg:col-span-1 mt-5">
+              <div className="col-span-2 md:col-span-1 mt-5">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <div className="text-white font-semibold text-[1.6rem] mb-2 md:mb-5">Our Offices</div>
@@ -83,6 +80,8 @@ const Navbar = ({ cartCount, setCartCount }) => {
           </div>
         </div>
       )}
+      
+      
       
     </div>
   );

@@ -1,14 +1,15 @@
-/* navbar.css */
-.animate-slide-down {
-    animation: slideDown 0.3s ease-in-out;
-  }
-  
-  @keyframes slideDown {
+@keyframes fadeIn {
     from {
-      transform: translateY(-100%);
+      opacity: 0;
+      transform: translateY(-20px);
     }
     to {
+      opacity: 1;
       transform: translateY(0);
     }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
   }
   
