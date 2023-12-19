@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import {  toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-export default function ShoppingCards({ updateCartCount }   ) {
+export default function ShoppingCards({ updateCartCount }) {
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 6;
@@ -48,17 +48,18 @@ export default function ShoppingCards({ updateCartCount }   ) {
     updateCartCount((prevCount) => prevCount + 1);
     console.log(`Product ${productId} added to cart`);
 
-    
     toast.success(`Product ${productId} added to cart`, {
       position: toast.POSITION.TOP_RIGHT,
-      autoClose: 3000, 
+      autoClose: 3000,
     });
   };
 
   return (
     <div className="w-full p-10">
-
-      <div data-aos="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div
+        data-aos="fade-up"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
         {currentProducts.map((product) => (
           <div key={product.id} className="p-6 bg-white rounded-md shadow-md">
             <img
@@ -71,7 +72,7 @@ export default function ShoppingCards({ updateCartCount }   ) {
               <div
                 class="text-white text-base font-medium font-['Mona-Sans'] cursor-pointer"
                 onClick={() => {
-                    handleAddToCart(product.id);
+                  handleAddToCart(product.id);
                 }}
               >
                 Add to cart
@@ -81,7 +82,6 @@ export default function ShoppingCards({ updateCartCount }   ) {
         ))}
       </div>
 
-    
       {products.length > productsPerPage && (
         <div className="flex mt-4 items-center justify-center">
           <button
