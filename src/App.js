@@ -1,34 +1,29 @@
-import { useState } from "react";
-import { ToastContainer } from "react-toastify";
 import "./App.css";
-import AboutProjects from "./component/aboutProjects";
-import AboutSection from "./component/aboutSection";
-import AboutUs from "./component/aboutUs";
-import CaseStudy from "./component/caseStudy";
-import { Footer } from "./component/footer";
-import HeroSection from "./component/heroSection";
-import Navbar from "./component/navbar";
-import Reviews from "./component/reviews";
-import ShoppingCards from "./component/shoppingCards";
+import Navbar from "./components/navbar/Navbar";
+import HeroSection from "./components/pages/HeroSection";
+import Featured from "./components/pages/Featured";
+import Collection from "./components/pages/Collection";
+import Community from "./components/pages/Community";
+import DiscountSale from "./components/blocks/DiscountSale";
+import Collaboration from "./components/pages/Collaboration";
+import Newsletter from "./components/pages/Newsletter";
+import Footer from "./components/blocks/Footer";
 
 function App() {
-  const [cartCount, setCartCount] = useState(0);
-
-  const updateCartCount = (count) => {
-    setCartCount(count);
-  };
   return (
-    <div>
-      <Navbar cartCount={cartCount} />
-      <HeroSection />
-      <AboutSection />
-      <CaseStudy />
-      <Reviews />
-      <ShoppingCards updateCartCount={updateCartCount} />
-      <AboutProjects />
-      <AboutUs />
-      <Footer />
-      <ToastContainer />
+    <div className="landing-page bg-[#051139] ">
+      <div className=" bg-[#051139] ">
+        <Navbar />
+        <HeroSection />
+        <DiscountSale />
+        <Featured />
+        <Collection />
+        <Community />
+        <DiscountSale />
+        <Collaboration />
+        <Newsletter />
+        <Footer />
+      </div>
     </div>
   );
 }
